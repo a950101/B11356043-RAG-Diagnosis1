@@ -1,0 +1,11 @@
+## A. 系統架構圖 (System Architecture)
+
+本系統採用 **Advanced RAG** 流程，特別強化了醫療專業術語的檢索精準度。
+
+
+
+### 關鍵流程：
+1. **Data Ingestion**: 讀取 PDF 醫學診療指引，使用 Markdown 切片保留標題階層。
+2. **Embedding**: 採用 `BGE-M3` 模型，將醫學文本轉化為 1024 維向量。
+3. **Retrieval**: 執行 **Hybrid Search**（BM25 關鍵字 + 向量語義）。
+4. **Reranking**: 使用 **FlashRank** 針對 Top-20 結果進行精準重排，過濾掉不相關病徵。
