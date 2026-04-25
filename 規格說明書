@@ -1,0 +1,11 @@
+## B. 系統規格 (Technical Specifications)
+
+### 1. 資料切片策略 (Chunking Strategy)
+- **方法**: 語義切分 (Semantic Chunking)。
+- **理由**: 醫學邏輯需保持完整，避免因字數強行切斷導致診斷建議錯誤。
+
+### 2. 性能指標
+- **檢索延遲**: < 1,500ms。
+- **評估機制**: 導入 **RAGAS** 評估。
+    - **Faithfulness (忠實度)**: 確保 AI 回答皆有文獻佐證。
+    - **Relevancy (相關性)**: 確保檢索內容與病患主訴相符。
